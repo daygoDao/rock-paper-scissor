@@ -6,10 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warrior, Mage, & Archer</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <h1>BATTLE TO THE DEATH! SELECT YOUR FIGHTERS TO DETERMINE THE VICTOR OF THE WAR!</h1>
+    <main>
+        <h1>BATTLE TO THE DEATH! SELECT YOUR FIGHTERS TO DETERMINE THE VICTOR OF THE WAR!</h1>
+        <section class="battleground">
+            <section class="playerInterface">
+                <h2>Player</h2>
+                <section class="warrior"></section>
+                <section class="mage"></section>
+                <section class="archer"></section>
+            </section>
+            
+            <section class="computerInterface">
+                <h2>Computer</h2>
+                <section class="warrior"></section>
+                <section class="mage"></section>
+                <section class="archer"></section>
+            </section>
+        </section>
+    </main>
+
+    <section class="scoreboard">
+        <h2 class="playerScoreboard">0</h2>
+        <h2>-</h2>
+        <h2 class="computerScoreboard">0</h2>
+    </section>
+
+    <section class="roundResult">
+        <p>WHO SHALL BE THE VICTOR?!</p>
+    </section>
 
     <script src="./main.js"></script>
 </body>
