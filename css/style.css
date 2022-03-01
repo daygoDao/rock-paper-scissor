@@ -7,6 +7,7 @@
 .battleground {
     display: flex;
 }
+
 .playerInterface,
 .computerInterface {
     width: 50%;
@@ -22,7 +23,11 @@
     align-items: center;
 }
 
-.roundResult, 
+.roundResult,
 main h1 {
     text-align: center;
+}
+
+.chosenFighter {
+    background-color: green;
 }
