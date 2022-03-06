@@ -22,3 +22,8 @@ function to play a round with two parameters with the selected fighters.
 function to play a whole game of 5 rounds that will call a function to play a round.
     this function will keep track of the scoreboard for the winner of each round until the first one to win 5 rounds wins the game.
     use a while loop to iterate rounds, computer selection and player's input
+
+- [ ] test
+- [ ] test
+- [ ] test
+- [x] test
