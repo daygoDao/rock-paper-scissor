@@ -1,12 +1,16 @@
 let playerSelected = 'n/a';
 
-document.getElementById('warrior').addEventListener('click', chosenWarrior);
-document.getElementById('mage').addEventListener('click', chosenMage);
-document.getElementById('archer').addEventListener('click', chosenArcher);
+const warrior = document.getElementById('warrior')
+warrior.addEventListener('click', chosenWarrior);
+const mage = document.getElementById('mage')
+mage.addEventListener('click', chosenMage);
+const archer = document.getElementById('archer')
+archer.addEventListener('click', chosenArcher);
 
-function chosenWarrior() {
+function chosenWarrior(e) {
 	document.querySelector('#warrior').style.background = 'blue';
 	playerSelected = 'warrior';
+	return 'warrior';
 }
 
 function chosenMage() {
