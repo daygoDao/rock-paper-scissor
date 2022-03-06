@@ -1,29 +1,19 @@
-#Rock Paper Scissors
+# Rock Paper Scissors
 
 A variant of **rock, paper, or scissors** but with a *middle earth perspective*.
-This will be pure HTML, CSS, and <mark>Javascript</mark>.
+This will be pure <mark>HTML</mark>, <mark>CSS</mark>, and <mark>Javascript</mark>.
 Created by Dao Vo
 
-what it does:
-Play vs computer and the first to five wins the game.
-Player clicks on 1 of three options the result will output to the page.
-Each opponent will have their own respective box for options and the border will glow for the selected fighters each round.
-After the first one to 5 victory wins, a try again button will appear to contine another session.
+## pseudocode:
+* Game begins when user loads into the webpage.
+* When user clicks on one of the three buttons that action will be recorded as one of five rounds.
+  * add event listeners for the 3 choices that holds the function  playRound
+* choices selected buy user and opponent will be displayed below in a div along with results.
+    * in the 1v1 section winner will have a background of green and the loser with red.
+* when user finishes five rounds then the game will end with the score and option to play again.
 
-pseudocode:
-first iteration of this game is console based and a gui will be added later for click players to click to input choices.
-
-
-function to return users choice
-    make user input case insensitive.
-function to return computers choice
-function to play a round with two parameters with the selected fighters.
-    output winner and increment scoreboard.
-function to play a whole game of 5 rounds that will call a function to play a round.
-    this function will keep track of the scoreboard for the winner of each round until the first one to win 5 rounds wins the game.
-    use a while loop to iterate rounds, computer selection and player's input
-
-- [ ] test
-- [ ] test
-- [ ] test
-- [x] test
+## todo
+- [ ] add images
+- [ ] get game to initiate
+- [ ] make start game pop up when user loads into the page
+- [x] have fun

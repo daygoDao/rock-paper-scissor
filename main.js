@@ -1,25 +1,11 @@
 let playerSelected = 'n/a';
 
-const warrior = document.getElementById('warrior')
-warrior.addEventListener('click', chosenWarrior);
-const mage = document.getElementById('mage')
-mage.addEventListener('click', chosenMage);
-const archer = document.getElementById('archer')
-archer.addEventListener('click', chosenArcher);
-
-function chosenWarrior(e) {
-	document.querySelector('#warrior').style.background = 'blue';
-	playerSelected = 'warrior';
-	return 'warrior';
-}
-
-function chosenMage() {
-	document.querySelector('#mage').style.background = 'blue';
-}
-
-function chosenArcher() {
-	document.querySelector('#archer').style.background = 'blue';
-}
+const rock = document.getElementById('rock')
+rock.addEventListener('click', playRound);
+const paper = document.getElementById('paper')
+paper.addEventListener('click', playRound);
+const scissor = document.getElementById('scissor')
+scissor.addEventListener('click', playRound);
 
 /*
  ** playerChoice() will get the users selection and return warrior, mage, or archer
@@ -27,9 +13,10 @@ function chosenArcher() {
  ** arg(s):      none
  ** return(s):   string type fighter; ex. 'warrior'
  */
-function playerChoice() {
+function playerChoice(e) {
 	//get user input
-	let choice = prompt('choose warrior, mage, or archer', '').toLowerCase();
+	let choice = e.target.value;
+
 	//return string value
 	return choice;
 }
@@ -41,9 +28,9 @@ function playerChoice() {
  ** return(s):   string type figher; ex. 'mage'
  */
 function computerChoice() {
-	let fighters = ['warrior', 'mage', 'archer'];
+	let fighters = ['rock', 'paper', 'scissor'];
 	let computerChoice = Math.floor(Math.random() * 3);
-	console.log(fighters[computerChoice]);
+	//console.log(fighters[computerChoice]);
 	return fighters[computerChoice];
 }
 
@@ -54,14 +41,14 @@ function computerChoice() {
  ** arg(s):      none
  ** return(s):   none
  */
-function playRound() {
-	let fighter1 = playerChoice();
+function playRound(e) {
+	let fighter1 = playerChoice(e);
 	let fighter2 = computerChoice();
 	console.log(`player 1 fighter is ${fighter1}`)
 	console.log(`player 2 fighter is ${fighter2}`)
-	//    console.log(battle(fighter1, fighter2));
 	return battle(fighter1, fighter2);
 }
+
 /*
  ** battle(fighter1, fighter2) take the computer and players selection as
  ** arguments and determines the winner of the round.
@@ -77,22 +64,22 @@ function battle(fighter1, fighter2) {
 	let winner = 0;
 	if (fighter1 === fighter2) {
 		console.log('tie');
-	} else if (fighter1 === 'warrior' && fighter2 === 'archer') {
+	} else if (fighter1 === 'rock' && fighter2 === 'scissor') {
 		console.log("player 1's warrior murders the archer with the swing of his axe");
 		winner = 1;
-	} else if (fighter1 === 'archer' && fighter2 === 'mage') {
-		console.log("player 1's archer launches an arrow into the mage's skull");
+	} else if (fighter1 === 'scissor' && fighter2 === 'paper') {
+		console.log("player 1's ninja throws down a smoke bomb and throws a kunai into the mage's skull");
 		winner = 1;
-	} else if (fighter1 === 'mage' && fighter2 === 'warrior') {
+	} else if (fighter1 === 'paper' && fighter2 === 'rock') {
 		console.log("player 1's mage renders the warrior frozen to death with his magical blizzard");
 		winner = 1;
-	} else if (fighter2 === 'warrior' && fighter1 === 'archer') {
+	} else if (fighter2 === 'rock' && fighter1 === 'scissor') {
 		console.log("computer's warrior murders the archer with the swing of his axe");
 		winner = 2;
-	} else if (fighter2 === 'archer' && fighter1 === 'mage') {
-		console.log("computer's archer launches an arrow into the mage's skull");
+	} else if (fighter2 === 'scissor' && fighter1 === 'paper') {
+		console.log("computer's ninja sneaks through the shadows and backstabs the mage");
 		winner = 2;
-	} else if (fighter2 === 'mage' && fighter1 === 'warrior') {
+	} else if (fighter2 === 'paper' && fighter1 === 'rock') {
 		console.log("computer's mage renders the warrior frozen to death with his magical blizzard");
 		winner = 2;
 	}
@@ -112,6 +99,7 @@ function game() {
 	let computerScore = 0;
 	while (!exitGame) {
 		let winner = playRound();
+		console.log(winner);
 		if (winner === 1) {
 			playerScore++;
 		}
