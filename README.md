@@ -1,7 +1,7 @@
 #Rock Paper Scissors
 
 A variant of **rock, paper, or scissors** but with a *middle earth perspective*.
-This will be pure ==HTML==, ==CSS==, and ==Javascript==.
+This will be pure HTML, CSS, and <mark>Javascript</mark>.
 Created by Dao Vo
 
 what it does:
