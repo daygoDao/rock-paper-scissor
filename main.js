@@ -5,11 +5,11 @@ let playerScoreboard = document.querySelector('.playerScoreboard');
 let npcScoreboard = document.querySelector('.computerScoreboard');
 let roundResult = document.querySelector('.roundResult');
 
-const rock = document.getElementById('rock')
+const rock = document.querySelector('.rock')
 rock.addEventListener('click', playRound);
-const paper = document.getElementById('paper')
+const paper = document.querySelector('.paper')
 paper.addEventListener('click', playRound);
-const scissor = document.getElementById('scissor')
+const scissor = document.querySelector('.scissor')
 scissor.addEventListener('click', playRound);
 
 /*
@@ -46,9 +46,12 @@ function computerChoice() {
 function playRound(e) {
 	let fighter1 = playerChoice(e);
 	let fighter2 = computerChoice();
+
+	document.querySelector('.fighter1').setAttribute('style', `background-image: url("./images/${fighter1}.jpg"); background-size: 150%; background-repeat: no-repeat; background-position: center;`)
+
+	document.querySelector('.fighter2').setAttribute('style', `background-image: url("./images/${fighter2}.jpg"); background-size: 150%; background-repeat: no-repeat; background-position: center;`)
+
 	let winner = battle(fighter1, fighter2);
-	console.log(`player 1 fighter is ${fighter1}`)
-	console.log(`player 2 fighter is ${fighter2}`)
 
 	console.log(winner);
 	if (winner === 1) {
@@ -59,7 +62,6 @@ function playRound(e) {
 		computerScore++;
 		npcScoreboard.textContent = computerScore;
 	}
-	console.log(`current score is player:${playerScore} - computer:${computerScore}`);
 
 	checkWinner(winner);
 }
