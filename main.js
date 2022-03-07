@@ -82,22 +82,22 @@ function battle(fighter1, fighter2) {
 	if (fighter1 === fighter2) {
 		roundResult.textContent = 'tie';
 	} else if (fighter1 === 'rock' && fighter2 === 'scissor') {
-		roundResult.textContent = "player 1's warrior murders the archer with the swing of his axe";
+		roundResult.textContent = "player 1's rock smashes the flimsy scisssor";
 		winner = 1;
 	} else if (fighter1 === 'scissor' && fighter2 === 'paper') {
-		roundResult.textContent = "player 1's ninja throws down a smoke bomb and throws a kunai into the mage's skull";
+		roundResult.textContent = "player 1's scissor rips the paper to shreds";
 		winner = 1;
 	} else if (fighter1 === 'paper' && fighter2 === 'rock') {
-		roundResult.textContent = "player 1's mage renders the warrior frozen to death with his magical blizzard";
+		roundResult.textContent = "player 1's paper wraps the rock and crushes it to pebbles";
 		winner = 1;
 	} else if (fighter2 === 'rock' && fighter1 === 'scissor') {
-		roundResult.textContent = "computer's warrior murders the archer with the swing of his axe";
+		roundResult.textContent = "computer's rock smashes the flimsy scisssor";
 		winner = 2;
 	} else if (fighter2 === 'scissor' && fighter1 === 'paper') {
-		roundResult.textContent = "computer's ninja sneaks through the shadows and backstabs the mage";
+		roundResult.textContent = "computer's scissor rips the paper to shreds";
 		winner = 2;
 	} else if (fighter2 === 'paper' && fighter1 === 'rock') {
-		roundResult.textContent = "computer's mage renders the warrior frozen to death with his magical blizzard";
+		roundResult.textContent = "computer's paper wraps the rock and crushes it to pebbles";
 		winner = 2;
 	}
 	return winner;
