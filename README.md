@@ -13,7 +13,8 @@ Created by Dao Vo
 * when user finishes five rounds then the game will end with the score and option to play again.
 
 ## todo
-- [ ] find and add images
+- [ ] clear the battle board after a full game is played
+- [ ] find and add better for paper and scissor images
 - [ ] add ui section where fighters chosen will appear each round with winner & loser highlighted
 - [x] game is function with UI
 - [x] get game to initiate
