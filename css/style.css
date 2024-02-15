@@ -32,6 +32,7 @@ button {
 
 .battleground {
     display: flex;
+    flex-direction: column
 }
 
 .playerInterface,
@@ -84,4 +85,9 @@ h2 {
     background-image: url('../images/scissor.jpg');
     background-size: 175%;
     background-position: 30%;
+}
+
+.selectedFighter {
+    display: flex;
+    flex-direction: row;
 }
