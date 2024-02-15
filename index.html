@@ -12,41 +12,47 @@
 
 <body>
 	<main>
-		<h1>BATTLE TO THE DEATH!</h1> 
-		<h2>SELECT YOUR FIGHTERS TO DETERMINE THE VICTOR OF THE WAR!</h2>
-		<section class="battleground">
-			<section class="playerInterface">
-				<section class="attackBar">
-					<h2>Player</h2>
-					<button class="rock" value="rock"></button>
-					<button class="paper" value="paper"></button>
-					<button class="scissor" value="scissor"></button>
-				</section>
-				<section class="fighter1"></section>
-			</section>
-
-			<section class="computerInterface">
-				<section class="fighter2"></section>
-
-				<section class="attackBar">
-					<h2>Computer</h2>
-					<button class="npc_rock"></button>
-					<button class="npc_paper"></button>
-					<button class="npc_scissor"></button>
-				</section>
-			</section>
-
+		<section>
+			<h1>BATTLE TO THE DEATH!</h1> 
+			<h2>SELECT YOUR FIGHTERS TO DETERMINE THE VICTOR OF THE WAR!</h2>
 		</section>
 
-		<section class="output">
-			<section class="scoreboard">
-				<h2 class="playerScoreboard">0</h2>
-				<h2>-</h2>
-				<h2 class="computerScoreboard">0</h2>
+		<!-- fighter 1 -->
+		<section class="playerInterface">
+			<section class="attackBar">
+				<h2>Player</h2>
+				<button class="rock" value="rock"></button>
+				<button class="paper" value="paper"></button>
+				<button class="scissor" value="scissor"></button>
 			</section>
-		
-			<section class="roundResult">
-				<p>WHO SHALL BE THE VICTOR?!</p>
+		</section>
+
+		<!-- battleground -->
+		<section class="battleground">
+			<!-- chosen fighters -->
+			<section class="fighter1"></section>
+			<section class="fighter2"></section>
+
+			<section class="output">
+				<section class="scoreboard">
+					<h2 class="playerScoreboard">0</h2>
+					<h2>-</h2>
+					<h2 class="computerScoreboard">0</h2>
+				</section>
+			
+				<section class="roundResult">
+					<p>WHO SHALL BE THE VICTOR?!</p>
+				</section>
+			</section>
+		</section>
+
+		<!-- fighter 2 -->
+		<section class="computerInterface">
+			<section class="attackBar">
+				<h2>Computer</h2>
+				<button class="npc_rock"></button>
+				<button class="npc_paper"></button>
+				<button class="npc_scissor"></button>
 			</section>
 		</section>
 		
