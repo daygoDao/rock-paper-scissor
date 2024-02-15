@@ -14,7 +14,8 @@ Created by Dao Vo
 
 ## todo
 - [ ] clear the battle board after a full game is played
-- [ ] find and add better for paper and scissor images
+- [x] find and add better for paper and scissor images
+- [ ] adjust layout so the scoreboard is nested undernearth the battleground and between the two player's fighers
 - [ ] add ui section where fighters chosen will appear each round with winner & loser highlighted
 - [x] game is function with UI
 - [x] get game to initiate
