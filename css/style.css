@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+.battle {
+    display: flex;
+    flex-direction: row;
+} 
+
 .battleground button {
     display: flex;
     flex-direction: column;

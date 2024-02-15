@@ -1,63 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DEATH BATTLE</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./main.js" async defer></script>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>DEATH BATTLE</title>
-	<link rel="stylesheet" href="./css/style.css">
-	<script src="./main.js" async defer></script>
-</head>
+  <body>
+    <main>
+      <section>
+        <h1>BATTLE TO THE DEATH!</h1>
+        <h2>SELECT YOUR FIGHTERS TO DETERMINE THE VICTOR OF THE WAR!</h2>
+      </section>
 
-<body>
-	<main>
-		<section>
-			<h1>BATTLE TO THE DEATH!</h1> 
-			<h2>SELECT YOUR FIGHTERS TO DETERMINE THE VICTOR OF THE WAR!</h2>
-		</section>
+      <section class="battle">
+        <!-- fighter 1 -->
+        <section class="playerInterface">
+          <section class="attackBar">
+            <h2>Player</h2>
+            <button class="rock" value="rock"></button>
+            <button class="paper" value="paper"></button>
+            <button class="scissor" value="scissor"></button>
+          </section>
+        </section>
 
-		<!-- fighter 1 -->
-		<section class="playerInterface">
-			<section class="attackBar">
-				<h2>Player</h2>
-				<button class="rock" value="rock"></button>
-				<button class="paper" value="paper"></button>
-				<button class="scissor" value="scissor"></button>
-			</section>
-		</section>
+        <!-- battleground -->
+        <section class="battleground">
+          <!-- chosen fighters -->
+          <section class="fighter1"></section>
+          <section class="fighter2"></section>
 
-		<!-- battleground -->
-		<section class="battleground">
-			<!-- chosen fighters -->
-			<section class="fighter1"></section>
-			<section class="fighter2"></section>
+          <section class="output">
+            <section class="scoreboard">
+              <h2 class="playerScoreboard">0</h2>
+              <h2>-</h2>
+              <h2 class="computerScoreboard">0</h2>
+            </section>
 
-			<section class="output">
-				<section class="scoreboard">
-					<h2 class="playerScoreboard">0</h2>
-					<h2>-</h2>
-					<h2 class="computerScoreboard">0</h2>
-				</section>
-			
-				<section class="roundResult">
-					<p>WHO SHALL BE THE VICTOR?!</p>
-				</section>
-			</section>
-		</section>
+            <section class="roundResult">
+              <p>WHO SHALL BE THE VICTOR?!</p>
+            </section>
+          </section>
+        </section>
 
-		<!-- fighter 2 -->
-		<section class="computerInterface">
-			<section class="attackBar">
-				<h2>Computer</h2>
-				<button class="npc_rock"></button>
-				<button class="npc_paper"></button>
-				<button class="npc_scissor"></button>
-			</section>
-		</section>
-		
-	</main>
-	
-</body>
-
+        <!-- fighter 2 -->
+        <section class="computerInterface">
+          <section class="attackBar">
+            <h2>Computer</h2>
+            <button class="npc_rock"></button>
+            <button class="npc_paper"></button>
+            <button class="npc_scissor"></button>
+          </section>
+        </section>
+      </section>
+    </main>
+  </body>
 </html>
