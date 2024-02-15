@@ -47,9 +47,9 @@ function playRound(e) {
 	let fighter1 = playerChoice(e);
 	let fighter2 = computerChoice();
 
-	document.querySelector('.fighter1').setAttribute('style', `background-image: url("./images/${fighter1}.jpg"); background-size: 150%; background-repeat: no-repeat; background-position: center;`)
+	document.querySelector('.fighter1')
 
-	document.querySelector('.fighter2').setAttribute('style', `background-image: url("./images/${fighter2}.jpg"); background-size: 150%; background-repeat: no-repeat; background-position: center;`)
+	document.querySelector('.fighter2')
 
 	let winner = battle(fighter1, fighter2);
 
