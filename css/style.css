@@ -24,6 +24,9 @@ button {
     width: 150px;
     height: 150px;
     border: 5px dotted lightblue;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: center;
     /* background: none !important; */
 }
 .fighter2 {

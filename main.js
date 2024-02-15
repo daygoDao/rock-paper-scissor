@@ -1,16 +1,16 @@
-console.log('welcome to the deathmatch!');
+console.log("welcome to the deathmatch!");
 let playerScore = 0;
 let computerScore = 0;
-let playerScoreboard = document.querySelector('.playerScoreboard');
-let npcScoreboard = document.querySelector('.computerScoreboard');
-let roundResult = document.querySelector('.roundResult');
+let playerScoreboard = document.querySelector(".playerScoreboard");
+let npcScoreboard = document.querySelector(".computerScoreboard");
+let roundResult = document.querySelector(".roundResult");
 
-const rock = document.querySelector('.rock')
-rock.addEventListener('click', playRound);
-const paper = document.querySelector('.paper')
-paper.addEventListener('click', playRound);
-const scissor = document.querySelector('.scissor')
-scissor.addEventListener('click', playRound);
+const rock = document.querySelector(".rock");
+rock.addEventListener("click", playRound);
+const paper = document.querySelector(".paper");
+paper.addEventListener("click", playRound);
+const scissor = document.querySelector(".scissor");
+scissor.addEventListener("click", playRound);
 
 /*
  ** playerChoice() will get the users selection and return warrior, mage, or archer
@@ -19,8 +19,8 @@ scissor.addEventListener('click', playRound);
  ** return(s):   string type fighter; ex. 'rock'
  */
 function playerChoice(e) {
-	let choice = e.target.value;
-	return choice;
+  let choice = e.target.value;
+  return choice;
 }
 
 /*
@@ -30,40 +30,43 @@ function playerChoice(e) {
  ** return(s):   string type figher; ex. 'paper'
  */
 function computerChoice() {
-	let fighters = ['rock', 'paper', 'scissor'];
-	let computerChoice = Math.floor(Math.random() * 3);
-	//console.log(fighters[computerChoice]);
-	return fighters[computerChoice];
+  let fighters = ["rock", "paper", "scissor"];
+  let computerChoice = Math.floor(Math.random() * 3);
+  //console.log(fighters[computerChoice]);
+  return fighters[computerChoice];
 }
 
 /*
  ** playRound() will call the helper function battle() returns the winner.
- ** 
+ **
  **
  ** arg(s):      none
  ** return(s):   none
  */
 function playRound(e) {
-	let fighter1 = playerChoice(e);
-	let fighter2 = computerChoice();
+  let fighter1 = playerChoice(e);
+  let fighter2 = computerChoice();
 
-	document.querySelector('.fighter1')
+  document
+    .querySelector(".fighter1")
+    .setAttribute("style", `background-image: url("./images/${fighter1}.jpg")`);
+  document
+    .querySelector(".fighter2")
+    .setAttribute("style", `background-image: url("./images/${fighter2}.jpg")`);
 
-	document.querySelector('.fighter2')
+  let winner = battle(fighter1, fighter2);
 
-	let winner = battle(fighter1, fighter2);
+  console.log(winner);
+  if (winner === 1) {
+    playerScore++;
+    playerScoreboard.textContent = playerScore;
+  }
+  if (winner === 2) {
+    computerScore++;
+    npcScoreboard.textContent = computerScore;
+  }
 
-	console.log(winner);
-	if (winner === 1) {
-		playerScore++;
-		playerScoreboard.textContent = playerScore;
-	}
-	if (winner === 2) {
-		computerScore++;
-		npcScoreboard.textContent = computerScore;
-	}
-
-	checkWinner(winner);
+  checkWinner(winner);
 }
 
 /*
@@ -74,33 +77,35 @@ function playRound(e) {
  ** Mage > Warrior
  **
  ** arg(s):      strings type 'fighter1' & 'fighter2'
- ** return(s):   number type 'winner'; number 1 correlate to the player while 
+ ** return(s):   number type 'winner'; number 1 correlate to the player while
  **              number 2 will represent the computer
  */
 function battle(fighter1, fighter2) {
-	let winner = 0;
-	if (fighter1 === fighter2) {
-		roundResult.textContent = 'tie';
-	} else if (fighter1 === 'rock' && fighter2 === 'scissor') {
-		roundResult.textContent = "player 1's rock smashes the flimsy scisssor";
-		winner = 1;
-	} else if (fighter1 === 'scissor' && fighter2 === 'paper') {
-		roundResult.textContent = "player 1's scissor rips the paper to shreds";
-		winner = 1;
-	} else if (fighter1 === 'paper' && fighter2 === 'rock') {
-		roundResult.textContent = "player 1's paper wraps the rock and crushes it to pebbles";
-		winner = 1;
-	} else if (fighter2 === 'rock' && fighter1 === 'scissor') {
-		roundResult.textContent = "computer's rock smashes the flimsy scisssor";
-		winner = 2;
-	} else if (fighter2 === 'scissor' && fighter1 === 'paper') {
-		roundResult.textContent = "computer's scissor rips the paper to shreds";
-		winner = 2;
-	} else if (fighter2 === 'paper' && fighter1 === 'rock') {
-		roundResult.textContent = "computer's paper wraps the rock and crushes it to pebbles";
-		winner = 2;
-	}
-	return winner;
+  let winner = 0;
+  if (fighter1 === fighter2) {
+    roundResult.textContent = "tie";
+  } else if (fighter1 === "rock" && fighter2 === "scissor") {
+    roundResult.textContent = "player 1's rock smashes the flimsy scisssor";
+    winner = 1;
+  } else if (fighter1 === "scissor" && fighter2 === "paper") {
+    roundResult.textContent = "player 1's scissor rips the paper to shreds";
+    winner = 1;
+  } else if (fighter1 === "paper" && fighter2 === "rock") {
+    roundResult.textContent =
+      "player 1's paper wraps the rock and crushes it to pebbles";
+    winner = 1;
+  } else if (fighter2 === "rock" && fighter1 === "scissor") {
+    roundResult.textContent = "computer's rock smashes the flimsy scisssor";
+    winner = 2;
+  } else if (fighter2 === "scissor" && fighter1 === "paper") {
+    roundResult.textContent = "computer's scissor rips the paper to shreds";
+    winner = 2;
+  } else if (fighter2 === "paper" && fighter1 === "rock") {
+    roundResult.textContent =
+      "computer's paper wraps the rock and crushes it to pebbles";
+    winner = 2;
+  }
+  return winner;
 }
 
 /*
@@ -111,14 +116,13 @@ function battle(fighter1, fighter2) {
  */
 //this function will check if game is over with the first one to 5 wins
 function checkWinner(winner) {
-	if (playerScore === 5 || computerScore === 5) {
-		alert(`the winner is ${winner}. but for how long?`);
-		//reset score to 0
-		playerScore = 0;
-		computerScore = 0;
-		playerScoreboard.textContent = playerScore;
-		npcScoreboard.textContent = computerScore;
-		roundResult.textContent = 'WHO SHALL BE THE VICTOR?!'
-
-	}
+  if (playerScore === 5 || computerScore === 5) {
+    alert(`the winner is ${winner}. but for how long?`);
+    //reset score to 0
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreboard.textContent = playerScore;
+    npcScoreboard.textContent = computerScore;
+    roundResult.textContent = "WHO SHALL BE THE VICTOR?!";
+  }
 }
