@@ -144,7 +144,19 @@ function reset() {
   computerScore = 0;
   playerScoreboard.textContent = playerScore;
   npcScoreboard.textContent = computerScore;
-  roundResult.textContent = "WHO SHALL BE THE VICTOR?!";
+	document
+      .querySelector(".fighter1")
+      .removeAttribute(
+        "style",
+        `background-image: none)`
+      );
+    document
+      .querySelector(".fighter2")
+      .removeAttribute(
+        "style",
+        `background-image: none)`
+      );
+  roundResult.textContent = "Another war has been declared!";
 }
 
 scissor.addEventListener("click", playRound);
