@@ -13,7 +13,7 @@ Created by Dao Vo
 * when user finishes five rounds then the game will end with the score and option to play again.
 
 ## todo
-- [ ] clear the battle board after a full game is played
+- [x] clear the battle board after a full game is played
 - [x] find and add better for paper and scissor images
 - [x] adjust layout so the scoreboard is nested undernearth the battleground and between the two player's fighers
 - [ ] add ui section where fighters chosen will appear each round with winner & loser highlighted
