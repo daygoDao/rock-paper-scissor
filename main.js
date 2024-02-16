@@ -6,11 +6,9 @@ let npcScoreboard = document.querySelector(".computerScoreboard");
 let roundResult = document.querySelector(".roundResult");
 
 const rock = document.querySelector(".rock");
-rock.addEventListener("click", playRound);
 const paper = document.querySelector(".paper");
-paper.addEventListener("click", playRound);
 const scissor = document.querySelector(".scissor");
-scissor.addEventListener("click", playRound);
+const restart = document.querySelector(".reset");
 
 /*
  ** playerChoice() will get the users selection and return warrior, mage, or archer
@@ -44,29 +42,40 @@ function computerChoice() {
  ** return(s):   none
  */
 function playRound(e) {
-  let fighter1 = playerChoice(e);
-  let fighter2 = computerChoice();
+  if (playerScore >= 5 || computerScore >= 5) {
+    alert("Play a new game by pressing the Start Over button.");
+  } else {
+    let fighter1 = playerChoice(e);
+    let fighter2 = computerChoice();
 
-  document
-    .querySelector(".fighter1")
-    .setAttribute("style", `background-image: url("./images/${fighter1}.jpg")`);
-  document
-    .querySelector(".fighter2")
-    .setAttribute("style", `background-image: url("./images/${fighter2}.jpg")`);
+    document
+      .querySelector(".fighter1")
+      .setAttribute(
+        "style",
+        `background-image: url("./images/${fighter1}.jpg")`
+      );
+    document
+      .querySelector(".fighter2")
+      .setAttribute(
+        "style",
+        `background-image: url("./images/${fighter2}.jpg")`
+      );
 
-  let winner = battle(fighter1, fighter2);
+    let winner = battle(fighter1, fighter2);
 
-  console.log(winner);
-  if (winner === 1) {
-    playerScore++;
-    playerScoreboard.textContent = playerScore;
+    if (winner === 1) {
+      playerScore++;
+      playerScoreboard.textContent = playerScore;
+    }
+    if (winner === 2) {
+      computerScore++;
+      npcScoreboard.textContent = computerScore;
+    }
+
+    console.log(`player:${playerScore}; computer:${computerScore}`);
+
+    checkWinner(winner);
   }
-  if (winner === 2) {
-    computerScore++;
-    npcScoreboard.textContent = computerScore;
-  }
-
-  checkWinner(winner);
 }
 
 /*
@@ -117,12 +126,28 @@ function battle(fighter1, fighter2) {
 //this function will check if game is over with the first one to 5 wins
 function checkWinner(winner) {
   if (playerScore === 5 || computerScore === 5) {
-    alert(`the winner is ${winner}. but for how long?`);
-    //reset score to 0
-    playerScore = 0;
-    computerScore = 0;
-    playerScoreboard.textContent = playerScore;
-    npcScoreboard.textContent = computerScore;
-    roundResult.textContent = "WHO SHALL BE THE VICTOR?!";
+    roundResult.textContent = `The winner is ${
+      winner == 1 ? "Human" : "Computer"
+    }`;
   }
 }
+
+/*
+ ** checkWinner() will see if someone is first to 5 wins
+ **
+ ** arg(s):      number type 'winner'; 0 is a tie, 1 will be the user, 2 will be the computer
+ ** return(s):   none
+ */
+//this function will check if game is over with the first one to 5 wins
+function reset() {
+  playerScore = 0;
+  computerScore = 0;
+  playerScoreboard.textContent = playerScore;
+  npcScoreboard.textContent = computerScore;
+  roundResult.textContent = "WHO SHALL BE THE VICTOR?!";
+}
+
+scissor.addEventListener("click", playRound);
+paper.addEventListener("click", playRound);
+rock.addEventListener("click", playRound);
+restart.addEventListener("click", reset);
